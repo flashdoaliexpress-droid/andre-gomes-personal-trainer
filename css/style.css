@@ -278,10 +278,11 @@ ul  { list-style: none; }
   gap: 40px;
 }
 
-/* Logo — sem filter, preserva efeito 3D */
+/* Logo — filter garante branco puro independente do arquivo */
 .nav__logo-img {
   height: 44px;
   width: auto;
+  filter: brightness(0) invert(1);
   transition: opacity 0.2s;
 }
 
@@ -945,11 +946,11 @@ ul  { list-style: none; }
   border-bottom: 1px solid var(--border-soft);
 }
 
-/* Footer logo — sem filter */
 .footer__logo {
   height: 44px;
   width: auto;
-  opacity: 0.9;
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
   margin-bottom: 10px;
 }
 
@@ -1064,16 +1065,16 @@ ul  { list-style: none; }
   .nav__cta   { display: none; }
   .nav__burger { display: flex; }
 
-  /* Hero — texto na base, rosto do André visível no topo */
+  /* Hero mobile — topo da imagem visível (rosto André), textos na base */
   .hero {
-    background-position: 50% 8%;
+    background-position: 50% 0%;
     background-image:
       linear-gradient(
         to bottom,
-        rgba(7,9,10,0.30)  0%,
-        rgba(7,9,10,0.25) 35%,
-        rgba(7,9,10,0.80) 62%,
-        rgba(7,9,10,0.97) 100%
+        rgba(7,9,10,0.15)  0%,
+        rgba(7,9,10,0.10) 30%,
+        rgba(7,9,10,0.75) 58%,
+        rgba(7,9,10,0.98) 100%
       ),
       url('../imagens/hero.png');
     align-items: flex-end;
@@ -1081,9 +1082,12 @@ ul  { list-style: none; }
 
   .hero__content {
     margin-left: 0;
-    padding: 0 24px 72px;
+    padding: 0 24px 88px;
     max-width: 100%;
   }
+
+  /* Esconde o subtítulo no mobile para reduzir altura do bloco de texto */
+  .hero__sub { display: none; }
 
   .hero__btns          { flex-direction: column; }
   .hero__scroll-indicator { display: none; }
